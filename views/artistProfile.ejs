@@ -1,0 +1,137 @@
+<%- include("partials/header.ejs") %>
+
+<section class="artist-profile">
+  <div class="sidebar-artist">
+    <h3>Artist: <%= user.username %></h3>
+    <hr/>
+    <button onclick="showArtworks()">Artworks</button>
+    <button onclick="showWorkshops()">Workshops</button>
+    <hr/>
+    <a class="btn btn-primary mb-1" href="/addArtwork"> Add ArtWork </a>
+    <a class="btn btn-success " href="/addWorkshop"> Create Workshop</a>
+  </div>
+
+  <div class="artist-profile-container" id="main-content">
+    <!-- Content will be dynamically updated based on user selection -->
+  </div>
+</section>
+
+<script>
+  function showArtworks() {
+    // Use AJAX or other methods to fetch and display artworks
+    // Update the content in the "main-content" div
+    document.getElementById("main-content").innerHTML = `
+      <h4>Artworks Created:</h4>
+      <ul class="list-group">
+        <!-- Use JavaScript to dynamically generate artwork rows -->
+        <!-- Include features to delete or update each artwork -->
+        <% if (artistArtworks && artistArtworks.length > 0) { %>
+          <% artistArtworks.forEach(artwork => { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= artwork.title %> - <%= artwork.year %>
+              <div class="btn-group">
+                <button type="button" class="btn btn-danger" onclick="deleteArtwork('<%= artwork.title %>')">Delete</button>
+                <a href="/updateArtwork/<%= artwork.title %>" class="btn btn-primary">Update</a>
+                
+              </div>
+            </li>
+          <% }); %>
+        <% } else { %>
+          <li class="list-group-item">No artworks created yet.</li>
+        <% } %>
+      </ul>
+    `;
+  }
+
+  function showWorkshops() {
+    // Use AJAX or other methods to fetch and display workshops
+    // Update the content in the "main-content" div
+    document.getElementById("main-content").innerHTML = `
+      <h4>Workshops Hosted:</h4>
+      <ul class="list-group">
+        <!-- Use JavaScript to dynamically generate workshop rows -->
+        <!-- Include features to delete or update each workshop -->
+        <% if (artistWorkshops && artistWorkshops.length > 0) { %>
+          <% artistWorkshops.forEach(workshop => { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= workshop.title %> - <%= workshop.date.getFullYear() %>-<%= (workshop.date.getMonth() + 1).toString().padStart(2, '0') %>
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-danger" onclick="deleteWorkshop('<%= workshop.title %>')">Delete</button>
+                <a href="/updateWorkshop/<%= workshop.title %>" class="btn btn-primary">Update</a>
+                
+              </div>
+            </li>
+          <% }); %>
+        <% } else { %>
+          <li class="list-group-item">No workshops hosted yet.</li>
+        <% } %>
+      </ul>
+    `;
+  }
+
+  async function deleteArtwork(artworkTitle) {
+  const userConfirmed = confirm(`You are about to delete ${artworkTitle}. Are you sure?`);
+
+  if (!userConfirmed) {
+    return; 
+  }
+
+  try {
+    const response = await fetch(`/deleteArtwork/${encodeURIComponent(artworkTitle)}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to delete artwork with title ${artworkTitle}`);
+    }
+
+    
+    window.alert(`Artwork ${artworkTitle} has been deleted successfully.`);
+
+    // Reload the page
+    window.location.reload();
+  } catch (error) {
+    console.error('Error deleting artwork:', error);
+    // Handle the error appropriately, e.g., display an error message to the user
+    window.alert(`Error deleting artwork: ${error.message}`);
+  }
+}
+
+
+  async function deleteWorkshop(workshopTitle) {
+
+    const userConfirmed = confirm(`You are about to delete ${workshopTitle}. Are you sure?`);
+
+  if (!userConfirmed) {
+    return; 
+  }
+
+  try {
+    const response = await fetch(`/deleteWorkshop/${encodeURIComponent(workshopTitle)}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to delete artwork with title ${workshopTitle}`);
+    }
+
+    
+    window.alert(`Artwork ${workshopTitle} has been deleted successfully.`);
+
+    // Reload the page
+    window.location.reload();
+  } catch (error) {
+    console.error('Error deleting artwork:', error);
+    // Handle the error appropriately, e.g., display an error message to the user
+    window.alert(`Error deleting artwork: ${error.message}`);
+  }
+    
+  
+  }
+
+
+</script>
+
+
+<%- include("partials/footer.ejs") %>

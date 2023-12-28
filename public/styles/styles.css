@@ -1,0 +1,457 @@
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   
+  }
+  
+  form {
+    width: 100%;
+    max-width: 400px; 
+  }
+  
+  input {
+    padding: 10px; 
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    width: 100%;
+  }
+  
+  button {
+    padding: 12px 20px; 
+    background-color: #2ecc71; 
+    color: #fff; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+  }
+  
+  p {
+    margin-top: 16px; 
+  }
+  
+  a {
+    color: #3498db; 
+  }
+  
+
+
+  /* artworks page  styling */
+
+.artworks {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.artwork {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.artwork h3 {
+  margin-top: 0;
+
+}
+
+
+.artwork img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.artworks h2{
+  color: #333;
+}
+
+/* Styling for Reviews Section */
+.reviews {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.reviews h3 {
+  color: #4eb833;
+}
+
+.reviews ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reviews li {
+  margin-bottom: 10px;
+}
+
+.reviews p {
+  color: #777;
+}
+
+/* Styling for Form to Add Review */
+.reviews form {
+  margin-top: 20px;
+  width: 100%;
+
+}
+
+.reviews label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.reviews input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.reviews button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.reviews button:hover {
+  background-color: #45a049;
+}
+
+
+/* Styling for Likes Section */
+.likes {
+  margin-top: 20px;
+}
+.likes
+ h3 {
+  color: #397c37;
+}
+
+.likes p {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.likes form {
+  display: inline-block;
+}
+
+.likes button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.likes button:hover {
+  background-color: #2980b9;
+}
+
+
+
+.bottom-details {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+
+
+
+
+
+
+.artist-profile {
+  
+  padding: 20px;
+  display: flex;
+
+}
+
+.artist-profile h2 {
+  color: #333;
+}
+
+.artist-profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Artist Information Styles */
+.artist-profile-container h3 {
+  color: #555;
+}
+
+.artist-profile-container h4 {
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Artwork and Workshop Lists Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Enroll Form Styles */
+form[action="/enroll"] {
+  margin-top: 20px;
+}
+
+select, button {
+  margin-right: 10px;
+}
+.buttons-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.b-d,
+.b-d-r {
+  width: 48%; /* Adjust as needed */
+}
+
+.b-d {
+  text-align: left;
+}
+
+.b-d-r {
+  text-align: right;
+}
+
+
+/* styling  the addArtwork page*/
+
+.add-artwork {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+ 
+}
+
+.title-addArtwork {
+  margin-bottom: 20px;
+}
+
+.form-addArtwork {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-addArtwork form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  }
+
+  .form-addArtwork label {
+  margin-top: 10px;
+}
+
+.form-addArtwork input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-addArtwork button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-addArtwork button:hover {
+  background-color: #45a049;
+}
+.homepage {
+  height: 100vh;
+  margin: -1px;
+  background-image: url('/image/fantasy-2702997_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; 
+  position: relative;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  top: -10px; 
+  right: -10px; 
+  bottom: -10px; 
+  left: -10px; 
+  border: 10px solid transparent; 
+  box-shadow: 0 0 20px 10px rgb(77,59,57, 0.5); 
+  z-index: -1; 
+}
+
+#content-div{
+ 
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#content-div p, h2 {
+  color: #fff;
+}
+
+
+
+
+
+
+
+/* Search/ artwork Section Styles */
+.search-artworks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.right-search {
+  display: flex;
+  gap: 10px;
+  float: right;
+}
+
+.right-search form {
+  display: flex;
+  align-items: center;
+}
+.search-artworks h2{
+  color: black;
+}
+.right-search input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  transition: width 0.3s ease; 
+  width: 150px; 
+}
+
+.right-search input[type="text"]:hover {
+  width: 200px; 
+}
+
+.right-search button {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Search Results Styles */
+.search-results {
+  width: auto;
+}
+
+.artwork-list {
+  list-style: none;
+  padding: 0;
+}
+
+.artwork-item {
+  margin-bottom: 20px;
+  border-radius: 1rem;
+  border-style: groove;
+ 
+}
+
+.artwork-item a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+
+}
+
+.artwork-image {
+  max-width: 300px;
+  margin-right: 200px;
+}
+
+.artwork-details {
+  flex-grow: 1;
+}
+
+/* Pagination Styles */
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination a {
+  padding: 8px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.pagination a.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+
+
+
+h2{
+  color: black;
+}

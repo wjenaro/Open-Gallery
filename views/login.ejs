@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<section class="signup-form">
+  <h2>Log In</h2>
+
+  <!-- Display error message if there is any -->
+  <% if(errorMessage) { %>
+    <p style="color: red;"><%= errorMessage %></p>
+  <% } %>
+
+  <!-- Login form -->
+  <form action="/login" method="post">
+    <input type="text" id="username" name="username" placeholder="Enter Your Username" required>
+    <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+    <button type="submit">Log In</button>
+  </form>
+
+  <!-- Link to sign up if don't have an account -->
+  <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+</section>
+
+<%- include("partials/footer.ejs") %>

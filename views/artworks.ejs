@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+<section class="artworks">
+  <h2>Artworks</h2>
+
+  <!-- Display artworks from the JSON data -->
+  <% for (const artwork of artworks) { %>
+    <div class="row artwork mb-3">
+      <!-- Make each artwork item a clickable link -->
+      <a href="/artworks/<%= encodeURIComponent(artwork.title) %>" class="col-md-12 col-lg-6">
+        <img class="img-fluid" src="<%= artwork.poster %>" alt="<%= artwork.title %>">
+      </a>
+      <div class="col-md-12 col-lg-6">
+        <h3><%= artwork.title %></h3>
+        <p><strong>Artist:</strong> <%= artwork.artist %></p>
+      </div>
+    </div>
+  <% } %>
+</section>
+
+<%- include("partials/footer.ejs") %>

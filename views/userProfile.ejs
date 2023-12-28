@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+<div>
+  <h1>Welcome, <%= user.username %>!</h1>
+
+  <h2>Following Artists:</h2>
+  <ul>
+    <% user.followingArtists.forEach(artist => { %>
+      <li><%= artist.username %></li>
+    <% }); %>
+  </ul>
+
+  <h2>Liked Artworks:</h2>
+  <ul>
+    <% user.likedArtworks.forEach(artwork => { %>
+      <li><%= artwork.title %></li>
+    <% }); %>
+  </ul>
+
+  <h2>Reviewed Artworks:</h2>
+  <ul>
+    <% user.reviews.forEach(review => { %>
+      <li>
+        <p>Artwork: <%= review.artwork.title %></p>
+        <p>Review: <%= review.text %></p>
+      </li>
+    <% }); %>
+  </ul>
+
+  <h2>Manage Likes and Reviews:</h2>
+  <!-- You can add forms or buttons here to allow the user to manage their likes and reviews -->
+  <!-- For example, a form to add a new like or review, or buttons to delete existing likes or reviews -->
+</div>
+
+<%- include("partials/footer.ejs") %>

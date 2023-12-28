@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<section class="signup-form">
+  <h2>Create a New Account</h2>
+
+  <!-- Display error message if there is any -->
+  <% if(errorMessage) { %>
+    <p style="color: red;"><%= errorMessage %></p>
+  <% } %>
+
+  <!-- Sign-up form -->
+  <form action="/signup" method="post">
+    <input type="text" id="username" name="username" placeholder="Enter Your Username" required>
+    <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+    
+    <!-- Add a dropdown/select input for user type -->
+    <label for="userType">Select User Type:</label>
+    <select id="userType" name="userType" required>
+      <option value="patron">Patron</option>
+      <option value="artist">Artist</option>
+    </select>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <!-- Link to log in if already have an account -->
+  <p>Already have an account? <a href="/login">Log In</a></p>
+</section>
+
+<%- include("partials/footer.ejs") %>

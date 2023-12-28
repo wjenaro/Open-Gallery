@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+
+<section class="workshop-details">
+  <div class="workshop-info">
+    <h2><%= workshop.title %></h2>
+    <p><strong>Date:</strong> <%= workshop.date.toDateString() %></p>
+    <p><strong>Host:</strong> <%= workshop.host %></p>
+  </div>
+
+  <div class="workshop-description">
+    <h3>Description</h3>
+    <p><%= workshop.description %></p>
+  </div>
+
+  <p><a href="/workshops">Back to Workshops</a></p>
+</section>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+
+<section class="workshops container mt-4">
+  <h2 class="mb-4">Workshops</h2>
+
+  <% if (locals.user && locals.user.userType === 'patron') { %>
+    <div class="row">
+      <% workshops.forEach(workshop => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card workshop-card">
+            <div class="card-body">
+              <h3 class="card-title"><%= workshop.title %></h3>
+              <p class="card-text">Date: <%= workshop.date.getFullYear() %>-<%= (workshop.date.getMonth() + 1).toString().padStart(2, '0') %></p>
+
+              <p class="card-text">Description: <%= workshop.description %></p>
+
+              <% if (user && user.userType === 'patron') { %>
+                <button onclick="joinWorkshop('<%= workshop._id %>')" class="btn btn-primary">Join Workshop</button>
+              <% } else if (user && user.userType === 'artist' && user.username === workshop.host) { %>
+                <button onclick="editWorkshop('<%= workshop._id %>')" class="btn btn-secondary">Edit Workshop</button>
+                <button onclick="deleteWorkshop('<%= workshop._id %>')" class="btn btn-danger">Delete Workshop</button>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <p>Login as a patron to view and join workshops.</p>
+  <% } %>
+
+  <script>
+    function joinWorkshop(workshopId) {
+      // Implement logic to handle joining the workshop
+      alert('Successfully joined the workshop!');
+    }
+
+    function editWorkshop(workshopId) {
+      // Implement logic to handle editing the workshop
+      alert('Editing workshop: ' + workshopId);
+    }
+
+    function deleteWorkshop(workshopId) {
+      // Implement logic to handle deleting the workshop
+      alert('Deleting workshop: ' + workshopId);
+    }
+  </script>
+</section>
+
+<%- include("partials/footer.ejs") %>

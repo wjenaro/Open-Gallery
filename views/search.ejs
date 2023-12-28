@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs") %>
+
+<section class="search-artworks">
+    <h2>Artworks</h2>
+    <p>Discover Artistry: Explore a World of Creativity with our Searchable Art Collection.</p>
+  <div class="right-search">
+    <form action="/search" method="get">
+      <input type="text" id="search" name="q" placeholder="Enter your search query" value="<%= searchQuery || '' %>">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="search-results">
+    <% if (artworks.length > 0) { %>
+      <h2>Search Results for "<%= searchQuery %>"</h2>
+      <ul class="artwork-list">
+        <% artworks.forEach(artwork => { %>
+          <li class="artwork-item">
+            <a href="/artworks/<%= artwork.title %>">
+              <img src="<%= artwork.poster %>" alt="<%= artwork.title %>" class="artwork-image">
+              <div class="artwork-details">
+                <h3><%= artwork.title %></h3>
+                <p>Artist: <%= artwork.artist %></p>
+                <p>Category: <%= artwork.category %></p>
+                <!-- Add more details as needed -->
+              </div>
+            </a>
+          </li>
+        <% }); %>
+      </ul>
+
+      <!-- Pagination Links -->
+      <% if (totalPages > 1) { %>
+        <div class="pagination">
+          <% if (currentPage > 1) { %>
+            <a href="/search?q=<%= searchQuery %>&page=<%= currentPage - 1 %>">Previous</a>
+          <% } %>
+
+          <% for (let i = 1; i <= totalPages; i++) { %>
+            <a href="/search?q=<%= searchQuery %>&page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+          <% } %>
+
+          <% if (currentPage < totalPages) { %>
+            <a href="/search?q=<%= searchQuery %>&page=<%= currentPage + 1 %>">Next</a>
+          <% } %>
+        </div>
+      <% } %>
+
+    <% } else { %>
+      <p>No results found for "<%= searchQuery %>".</p>
+    <% } %>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

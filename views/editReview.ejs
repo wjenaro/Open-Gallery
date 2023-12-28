@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<section class="edit-review container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>Edit Review</h2>
+
+      <form action="/artworks/<%= artwork._id %>/edit-review/<%= review._id %>" method="post">
+        <div class="form-group">
+          <label for="comment">Edit your review</label>
+          <textarea class="form-control" id="comment" name="comment" rows="5" placeholder="Edit your review" required><%= review.comment %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

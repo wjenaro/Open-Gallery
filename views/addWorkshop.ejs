@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %>
+
+<section class="signup-form add-workshop container mt-4">
+  <h2>Add New Workshop</h2>
+  <hr/>
+
+  <form action="/addWorkshop" method="post">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" id="title" name="title" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="date" class="form-label">Date:</label>
+      <input type="date" id="date" name="date" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea id="description" name="description" class="form-control" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="requirements" class="form-label">Requirements:</label>
+      <textarea id="requirements" name="requirements" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Workshop</button>
+  </form>
+</section>
+
+<%- include("partials/footer.ejs") %>

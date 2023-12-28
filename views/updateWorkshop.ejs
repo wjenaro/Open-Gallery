@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+<section class="signup-form container mt-4">
+  <h2>Update Workshop</h2>
+
+  <form action="/updateWorkshop/<%= workshop._id %>" method="post">
+
+    <!-- Title -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" id="title" name="title" value="<%= workshop.title %>" class="form-control" required>
+    </div>
+
+    <!-- Date -->
+    <div class="mb-3">
+      <label for="date" class="form-label">Date:</label>
+      <input type="text" id="date" name="date" placeholder="mm/dd/yyyy" value="<%= workshop.date ? workshop.date.toISOString().split('T')[0] : '' %>" class="form-control" required>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea id="description" name="description" class="form-control" required><%= workshop.description %></textarea>
+    </div>
+
+    <!-- Requirements -->
+    <div class="mb-3">
+      <label for="requirements" class="form-label">Requirements:</label>
+      <textarea id="requirements" name="requirements" class="form-control"><%= workshop.requirements %></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Workshop</button>
+
+  </form>
+</section>
+
+<%- include("partials/footer.ejs") %>
