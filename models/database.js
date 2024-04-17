@@ -1,12 +1,18 @@
 const mongoose = require('mongoose');
-const url = "mongodb://0.0.0.0:27017/galleryDB";
+require('dotenv').config();
+const dbURI = process.env.MONGODB_URI ;
 
-
-
-// Function to connect to the database
 async function connectDB() {
   try {
-    await mongoose.connect(url);
+    if (!dbURI) {
+      throw new Error("MONGODB_URI environment variable is not defined.");
+    }
+
+    await mongoose.connect(dbURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+
     console.log("Database connected");
   } catch (error) {
     console.error("Failed to connect to the database:", error);
