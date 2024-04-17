@@ -314,11 +314,8 @@ textarea {
   background-color: #45a049;
 }
 .homepage {
-  height: 100vh;
-  margin: -1px;
-  background-image: url('/image/fantasy-2702997_1280.jpg');
-  background-size: cover;
-  background-position: center;
+  height: 70vh;
+
   overflow: hidden; 
   position: relative;
 }

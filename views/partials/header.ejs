@@ -4,59 +4,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="Open Gallery - Explore artworks and workshops.">
+  
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+
+  <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/content.css">
-  <link rel="stylesheet" href="/styles/styles.css"/>
-  <link rel="stylesheet" href="/styles/artistProfile.css"/>
-  
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/artistProfile.css">
 
-  <title>Open Gallary</title>
+  <title>Open Gallery</title>
 </head>
-<header>
-  <nav class="navbar navbar-expand-custom navbar-mainbg">
-    <a class="navbar-brand navbar-logo" href="/">Open Gallary</a>
-    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <i class="fas fa-bars text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <div class="hori-selector">
-          <div class="left"></div>
 
-        </div>
+<body>
+  <heade>
+    <nav class="navbar navbar-expand-custom navbar-mainbg" style="padding-right: 2rem; padding-left: 2rem;">
+      <a class="navbar-brand navbar-logo" href="/">Open Gallery</a>
+      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/"><i class="fa fa-home"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/search"><i class="far fa-file-image"></i>Artworks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/workshops"><i class="fas fa-fax"></i>Workshops</a>
+          </li>
+        </ul>
+      </div>
 
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/"><i class="fa fa-home"></i>Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/search"><i class="far fa-file-image"></i>Artworks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/workshops"><i class="fas fa-fax"></i>Workshops</a>
-        </li>
-       
-
-      </ul>
-    </div>
       <div class="ml-auto">
-      <% if (user) { %>
-        <!-- User is logged in, show user info and logout button -->
-        <a href="/userProfile" class="btn btn-success "> Welcome <%= user.username %>! </a> 
-        <a class="btn btn-outline-light" href="/logout">Logout</a>
-      <% } else { %>
-        <!-- User is not logged in, show login and register buttons -->
-        <a class="btn btn-outline-light" href="/login">Login</a>
-        <a class="btn btn-outline-light" href="/signup">Register</a>
-      <% } %>
-    </div>
+        <% if (user) { %>
+          <!-- User is logged in, show user info and logout button -->
+          <a href="/userProfile" class="btn btn-success">Welcome <%= user.username %>!</a>
+          <a class="btn btn-outline-light" href="/logout">Logout</a>
+        <% } else { %>
+          <!-- User is not logged in, show login and register buttons -->
+          <a class="btn btn-outline-light" href="/login">Login</a>
+          <a class="btn btn-outline-light" href="/signup">Register</a>
+        <% } %>
+      </div>
+    </nav>
+  </header>
 
+  <main class="container">
+    <!-- Main content of the page goes here -->
+  </main>
 
-    
-    
-  
-</header>
-<main class="container">
+  <!-- JavaScript -->
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-..snip.."></script>
+</body>
+
+</html>
