@@ -3,6 +3,8 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const galleryRoutes = require('./routes/galleryRoutes');
 
+
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 

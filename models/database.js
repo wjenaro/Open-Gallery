@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const dbURI = process.env.MONGODB_URI ;
+const dbURI = process.env.MONGODB_URI || 'mongodb://0.0.0.0:27017/galleryDB';
 
 async function connectDB() {
   try {
@@ -9,8 +9,8 @@ async function connectDB() {
     }
 
     await mongoose.connect(dbURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true
     });
 
     console.log("Database connected");
