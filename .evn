@@ -1,1 +1,1 @@
-MONGODB_URI=mongodb://0.0.0.0:27017/galleryDB
+MONGODB_URI=mongodb+srv://apexsolz:O18XQB4KDF10bTRa@cluster0.ou4v6.mongodb.net/
